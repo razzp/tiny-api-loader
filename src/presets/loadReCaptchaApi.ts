@@ -8,7 +8,14 @@ interface Options extends Indexable {
     hl?: string;
 }
 
-function loadReCaptchaApi(options?: Options) {
+/**
+ * Loads the ReCaptcha API.
+ *
+ * @param {Object} [options] {@link https://developers.google.com/recaptcha/docs/loading See docs}.
+ *
+ * @returns {Promise} The ReCaptcha API
+ */
+function loadReCaptchaApi(options?: Options): Promise<typeof grecaptcha> {
     const params = { ...options, onload: 'onReCaptchaApiReady' };
 
     return load(

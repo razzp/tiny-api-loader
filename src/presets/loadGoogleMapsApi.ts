@@ -18,7 +18,14 @@ interface Options extends Indexable {
     v?: string;
 }
 
-function loadGoogleMapsApi(options: Options) {
+/**
+ * Loads the Google Maps API.
+ *
+ * @param {Object} options {@link https://developers.google.com/maps/documentation/javascript/url-params See docs}.
+ *
+ * @returns {Promise} The Google Maps API
+ */
+function loadGoogleMapsApi(options: Options): Promise<typeof google.maps> {
     const params = { ...options, callback: 'onGoogleMapsAPIReady' };
 
     return load(
