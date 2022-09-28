@@ -145,9 +145,9 @@ https://developers.google.com/recaptcha/docs/loading
 ```
 
 ```javascript
-import { loadReCaptchaApi } from 'tiny-api-loader';
+import { loadYouTubeIframeApi } from 'tiny-api-loader';
 
-const api = await loadReCaptchaApi();
+const api = await loadYouTubeIframeApi();
 ```
 
 https://developers.google.com/youtube/iframe_api_reference
