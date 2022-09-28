@@ -2,14 +2,43 @@
   "name": "tiny-api-loader",
   "author": "Robert Wells",
   "version": "0.0.0",
-  "description": "",
+  "description": "A tiny helper that takes the pain out of loading third-party API's",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "api",
+    "loader",
+    "helper",
+    "utility",
+    "google",
+    "maps",
+    "recaptcha",
+    "youtube",
+    "iframe"
+  ],
+  "license": "MIT",
+  "bugs": "https://github.com/razzp/tiny-api-loader/issues",
+  "homepage": "https://github.com/razzp/tiny-api-loader#readme",
+  "repository": "github:razzp/tiny-api-loader",
+  "type": "module",
+  "main": "./dist/main.cjs",
+  "exports": {
+    "import": "./dist/main.js",
+    "require": "./dist/main.cjs"
+  },
+  "types": "./types/main.d.ts",
+  "files": [
+    "dist/**/*.?(c)js",
+    "types/**/*.d.ts"
+  ],
   "scripts": {
     "prebuild": "npm run lint && npm run prettier",
     "build": "rimraf dist && rollup --config && npm run types",
     "lint": "eslint --fix *.js src/** tests/**",
     "prettier": "prettier --list-different --write *.js src/** tests/**",
     "types": "rimraf types && tsc --project tsconfig.types.json",
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "prepublishOnly": "npm run test"
   },
   "jest": {
     "preset": "ts-jest",
