@@ -5,7 +5,7 @@ function loadYouTubeIframeApi() {
         'youtube',
         `https://www.youtube.com/iframe_api`,
         'onYouTubeIframeAPIReady',
-        () => window.YT
+        () => globalThis.YT
     );
 }
 

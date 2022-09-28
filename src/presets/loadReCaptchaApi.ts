@@ -15,7 +15,7 @@ function loadReCaptchaApi(options?: Options) {
         'recaptcha',
         `https://www.google.com/recaptcha/api.js?${serialise(params)}`,
         params.onload,
-        () => window.grecaptcha
+        () => globalThis.grecaptcha
     );
 }
 

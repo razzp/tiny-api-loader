@@ -25,7 +25,7 @@ function loadGoogleMapsApi(options: Options) {
         'googlemaps',
         `https://maps.googleapis.com/maps/api/js?${serialise(params)}`,
         params.callback,
-        () => window.google?.maps
+        () => globalThis.google?.maps
     );
 }
 

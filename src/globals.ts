@@ -5,7 +5,9 @@ declare global {
     }
 }
 
-// Fetch the cache, or create it if it doesn't exist yet.
-const cache = (window.__tinyApiLoaderCache ??= new Map());
+const { window: _WINDOW, document: _DOCUMENT } = globalThis;
 
-export { cache };
+// Fetch the cache, or create it if it doesn't exist yet.
+const _CACHE = (_WINDOW.__tinyApiLoaderCache ??= new Map());
+
+export { _CACHE, _DOCUMENT, _WINDOW };
